@@ -112,5 +112,5 @@ class Student
     SQL
 
     # return a new instance of the Student class
-    DB[:conn].execute(sql, number_students)
+    DB[:conn].execute(sql)
 end
