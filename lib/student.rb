@@ -72,7 +72,6 @@ class Student
       WHERE grade = 9
     SQL
 
-    # return a new instance of the Student class
     DB[:conn].execute(sql)
   end
 
@@ -97,7 +96,9 @@ class Student
       LIMIT ?
     SQL
 
-    DB[:conn].execute(sql, number_students)
+    DB[:conn].execute(sql, number_students) do |row|
+      self.new_from_db(row)
+      end
   end
 
   def self.first_student_in_grade_10
