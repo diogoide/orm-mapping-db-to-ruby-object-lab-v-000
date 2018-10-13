@@ -73,9 +73,7 @@ class Student
     SQL
 
     # return a new instance of the Student class
-    DB[:conn].execute(sql).map do |row|
-      self.new_from_db(row)
-      end
+    DB[:conn].execute(sql)
   end
 
   def self.students_below_12th_grade
@@ -99,7 +97,6 @@ class Student
       LIMIT ?
     SQL
 
-    # return a new instance of the Student class
     DB[:conn].execute(sql, number_students)
   end
 
