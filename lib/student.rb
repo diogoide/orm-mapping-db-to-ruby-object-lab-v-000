@@ -124,6 +124,5 @@ class Student
     SQL
 
       DB[:conn].execute(sql, grade_input)
-      end
   end
 end
