@@ -102,4 +102,15 @@ class Student
     # return a new instance of the Student class
     DB[:conn].execute(sql, number_students)
   end
+
+  def self.first_student_in_grade_10
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = 10
+      LIMIT 1
+    SQL
+
+    # return a new instance of the Student class
+    DB[:conn].execute(sql, number_students)
 end
