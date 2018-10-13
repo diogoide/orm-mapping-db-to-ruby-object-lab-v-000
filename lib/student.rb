@@ -28,11 +28,11 @@ class Student
       WHERE name = ?
       LIMIT 1
     SQL
-    
+
     # return a new instance of the Student class
     DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
-      end.first 
+      end.first
     end 
   end
 
